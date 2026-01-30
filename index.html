@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO y Redes Sociales -->
     <title>Fiestas Chiditas | Bio</title>
+    <meta name="description" content="¡Tu fiesta soñada, nosotros la hacemos chidita! Decoración, piñatas, mesas de dulces y más.">
+    <meta property="og:title" content="Fiestas Chiditas - Enlaces">
+    <meta property="og:description" content="¡Tu fiesta soñada, nosotros la hacemos chidita! 😉">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:type" content="website">
+    
+    <!-- Icono de la pestaña -->
+    <link rel="icon" type="image/png" href="logo.png">
+
     <!-- Fuentes divertidas de Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
     <!-- Iconos -->
@@ -34,7 +45,7 @@
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            overflow-x: hidden; /* Importante para que los emojis no ensanchen la pantalla */
+            overflow-x: hidden;
             position: relative;
         }
 
@@ -45,35 +56,28 @@
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* Para que puedas dar clic a través de ellos */
+            pointer-events: none;
             z-index: 0;
             overflow: hidden;
         }
 
         .emoji {
             position: absolute;
-            bottom: -50px; /* Empiezan fuera de la pantalla abajo */
-            font-size: 2.5rem; /* Los hice un poco más grandes también */
-            opacity: 1; /* Opacidad total */
-            filter: drop-shadow(0 0 5px rgba(255,255,255,0.3)); /* Brillo sutil para resaltar */
+            bottom: -50px;
+            font-size: 2.5rem;
+            opacity: 1;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.3));
             animation: float-up linear infinite;
         }
 
-        /* Animación para subir y rotar */
         @keyframes float-up {
-            0% {
-                transform: translateY(100vh) rotate(0deg) translateX(0);
-                opacity: 0;
-            }
-            5% { opacity: 1; } /* Aparecen rápido */
-            90% { opacity: 1; } /* Se mantienen visibles todo el camino */
-            100% {
-                transform: translateY(-10vh) rotate(360deg) translateX(20px);
-                opacity: 0;
-            }
+            0% { transform: translateY(100vh) rotate(0deg) translateX(0); opacity: 0; }
+            5% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg) translateX(20px); opacity: 0; }
         }
 
-        /* Configuraciones individuales para cada emoji (velocidad y posición) */
+        /* Configuraciones emojis */
         .e1 { left: 5%; animation-duration: 15s; animation-delay: 0s; font-size: 3rem; }
         .e2 { left: 15%; animation-duration: 12s; animation-delay: 2s; font-size: 2.2rem; }
         .e3 { left: 25%; animation-duration: 18s; animation-delay: 5s; font-size: 3.5rem; }
@@ -84,12 +88,12 @@
         .e8 { left: 85%; animation-duration: 19s; animation-delay: 0s; font-size: 2.5rem; }
         .e9 { left: 95%; animation-duration: 11s; animation-delay: 4s; font-size: 2.8rem; }
         
-        /* Contenedor tipo Celular */
+        /* Contenedor Principal */
         .container {
             width: 100%;
             max-width: 480px;
             padding: 40px 20px;
-            background: rgba(255, 255, 255, 0.92); /* Un poco más opaco para leer bien */
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(10px);
             min-height: 100vh;
             box-shadow: 0 0 50px rgba(0,0,0,0.2);
@@ -98,10 +102,9 @@
             align-items: center;
             animation: fadeIn 1s ease-out;
             position: relative;
-            z-index: 10; /* Encima de los emojis */
+            z-index: 10;
         }
 
-        /* Animación de entrada general */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -136,7 +139,6 @@
             transform: scale(1.05) rotate(5deg);
         }
 
-        /* Animación flotante para el logo */
         @keyframes float {
             0% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-10px) rotate(2deg); }
@@ -157,7 +159,7 @@
             justify-content: center;
             border: 3px solid white;
             font-size: 14px;
-            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s backwards;
+            animation: popIn 0.5s backwards;
         }
 
         @keyframes popIn {
@@ -165,7 +167,6 @@
             to { transform: scale(1); }
         }
 
-        /* Título con animación de colores */
         @keyframes rainbow-text {
             0% { color: var(--primary); }
             33% { color: #ff3399; }
@@ -214,7 +215,6 @@
             border: 2px solid transparent;
         }
 
-        /* Efecto de brillo que pasa por el botón */
         .link-card::before {
             content: '';
             position: absolute;
@@ -261,7 +261,6 @@
             transition: transform 0.3s;
         }
 
-        /* Animación de "baile" para los iconos al pasar el mouse */
         @keyframes wiggle {
             0%, 100% { transform: rotate(0deg); }
             25% { transform: rotate(-15deg); }
@@ -282,12 +281,12 @@
             transform: translateX(5px);
         }
 
-        /* Colores específicos por red social */
+        /* Colores Redes */
         .whatsapp .icon-box { background: linear-gradient(45deg, #25D366, #128C7E); }
         .instagram .icon-box { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
         .facebook .icon-box { background: linear-gradient(45deg, #1877F2, #166fe5); }
 
-        /* Sección de Catálogo */
+        /* Catálogo Grid */
         .catalog {
             width: 100%;
             margin-top: 40px;
@@ -305,7 +304,6 @@
             font-family: 'Pacifico', cursive;
         }
 
-        /* Animación extra para el emoji del título */
         .section-title::after {
             content: '✨';
             position: absolute;
@@ -346,9 +344,10 @@
             cursor: pointer;
             opacity: 0;
             animation: slideUp 0.6s forwards;
+            background-color: #eee;
         }
 
-        /* Retrasos para que aparezcan una por una */
+        /* Animación escalonada */
         .grid-item:nth-child(1) { animation-delay: 0.1s; }
         .grid-item:nth-child(2) { animation-delay: 0.2s; }
         .grid-item:nth-child(3) { animation-delay: 0.3s; }
@@ -381,23 +380,216 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            padding: 20px 10px 10px;
+            background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+            padding: 25px 10px 10px;
             color: white;
             font-size: 0.95rem;
             font-weight: 600;
             opacity: 0;
             transition: opacity 0.3s;
             text-align: center;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5); /* Sombra para leer mejor */
+        }
+        
+        @media (max-width: 360px) {
+            .grid-overlay {
+                font-size: 0.8rem;
+                padding: 15px 5px 5px;
+            }
         }
 
         .grid-item:hover .grid-overlay {
             opacity: 1;
         }
+        
+        /* --- ESTILOS NUEVOS: CARRUSEL DE SERVICIOS --- */
+        .services-carousel-container {
+            width: 100%;
+            margin-top: 40px;
+            position: relative;
+            height: 320px; /* Altura para las tarjetas */
+        }
+
+        .services-title-header {
+            text-align: center;
+            font-family: 'Pacifico', cursive;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-card {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateX(100px) scale(0.9);
+            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+            pointer-events: none; /* No clickable cuando está oculto */
+        }
+
+        /* Estado activo de la tarjeta */
+        .service-card.active {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+            pointer-events: all;
+            z-index: 2;
+        }
+
+        /* Estado saliente (para animación fluida) */
+        .service-card.prev {
+            opacity: 0;
+            transform: translateX(-100px) scale(0.9);
+            z-index: 1;
+        }
+
+        .service-icon-large {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+            transition: transform 0.5s;
+        }
+
+        .service-card.active .service-icon-large {
+            animation: bounceIn 0.8s;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin: 10px 0;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Indicadores (puntitos abajo) */
+        .dots-container {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: #ddd;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+
+        /* Colores específicos por tarjeta */
+        .card-imprenta .service-icon-large { color: #00ccff; }
+        .card-imprenta h3 { color: #00ccff; }
+        
+        .card-publicidad .service-icon-large { color: #ff0066; }
+        .card-publicidad h3 { color: #ff0066; }
+
+        .card-promo .service-icon-large { color: #9933ff; }
+        .card-promo h3 { color: #9933ff; }
+
+        .card-foto .service-icon-large { color: #ffcc00; }
+        .card-foto h3 { color: #ffcc00; }
+
+        .card-diseno .service-icon-large { color: #33cc33; }
+        .card-diseno h3 { color: #33cc33; }
+
+
+        /* --- ANIMACIÓN FINAL DE IMÁGENES --- */
+        .bottom-slideshow-container {
+            margin-top: 50px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 300px;
+            height: 300px;
+            position: relative;
+            background: white;
+            padding: 10px;
+            border-radius: 5px; /* Estilo Polaroid */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transform: rotate(-3deg);
+            transition: transform 0.3s;
+        }
+
+        .bottom-slideshow-container:hover {
+            transform: rotate(0deg) scale(1.05);
+            z-index: 5;
+        }
+
+        .slide-img {
+            width: 100%;
+            height: 85%; /* Dejar espacio abajo tipo polaroid */
+            object-fit: cover;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: calc(100% - 20px);
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide-img.visible {
+            opacity: 1;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-family: 'Pacifico', cursive;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .cta-text {
+            text-align: center;
+            font-weight: 800;
+            background: linear-gradient(45deg, #ff0066, #ffcc00, #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-top: 20px;
+            margin-bottom: 0;
+            font-size: 1.2rem;
+            animation: pulse-text 2s infinite;
+        }
+        
+        @keyframes pulse-text {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
 
         footer {
             margin-top: auto;
-            padding-top: 40px;
+            padding-top: 20px;
             padding-bottom: 20px;
             font-size: 0.9rem;
             color: #888;
@@ -435,7 +627,6 @@
         <!-- Encabezado -->
         <header>
             <div class="profile-pic-container">
-                <!-- IMPORTANTE: Asegúrate de tener tu archivo 'logo.png' en la misma carpeta -->
                 <img src="logo.png" onerror="this.src='https://via.placeholder.com/150/2d0036/FFFFFF?text=FC'" alt="Fiestas Chiditas Logo" class="profile-pic">
                 <div class="badge"><i class="fas fa-check"></i></div>
             </div>
@@ -445,8 +636,7 @@
 
         <!-- Botones de Acción -->
         <div class="links">
-            <!-- WhatsApp -->
-            <a href="https://wa.me/524421260133?text=Hola,%20vi%20su%20etiqueta%20y%20quiero%20información!" target="_blank" class="link-card whatsapp btn-pulse">
+            <a href="https://wa.me/524421260133?text=Hola,%20vi%20su%20etiqueta%20y%20quiero%20información!" target="_blank" class="link-card whatsapp btn-pulse" aria-label="Enviar WhatsApp">
                 <div class="link-content">
                     <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
                     <span>Mándanos un WhatsApp</span>
@@ -454,8 +644,7 @@
                 <i class="fas fa-chevron-right link-arrow"></i>
             </a>
 
-            <!-- Instagram -->
-            <a href="https://instagram.com/fiestaschiditas" target="_blank" class="link-card instagram">
+            <a href="https://instagram.com/fiestaschiditas" target="_blank" class="link-card instagram" aria-label="Ver Instagram">
                 <div class="link-content">
                     <div class="icon-box"><i class="fab fa-instagram"></i></div>
                     <span>Síguenos en Instagram</span>
@@ -463,8 +652,7 @@
                 <i class="fas fa-chevron-right link-arrow"></i>
             </a>
 
-            <!-- Facebook -->
-            <a href="https://www.facebook.com/profile.php?id=61579203017269" target="_blank" class="link-card facebook">
+            <a href="https://www.facebook.com/profile.php?id=61579203017269" target="_blank" class="link-card facebook" aria-label="Ver Facebook">
                 <div class="link-content">
                     <div class="icon-box"><i class="fab fa-facebook-f"></i></div>
                     <span>Ver fotos en Facebook</span>
@@ -473,71 +661,196 @@
             </a>
         </div>
 
-        <!-- Catálogo de Muestras -->
+        <!-- Catálogo de Muestras (RESTAURADO: 10 Items) -->
         <div class="catalog">
             <div class="section-title">Galería de Magia</div>
             
             <div class="grid">
-                <!-- Foto 1 -->
+                <!-- 1 -->
                 <div class="grid-item">
-                    <img src="decoracion.jpg" onerror="this.src='https://images.unsplash.com/photo-1530103862676-de3c9da59af7?auto=format&fit=crop&q=80&w=300'" alt="Decoración">
+                    <img src="decoracion.jpg" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1530103862676-de3c9da59af7?auto=format&fit=crop&q=80&w=300'" alt="Decoración">
                     <div class="grid-overlay">Decoración</div>
                 </div>
-                <!-- Foto 2 -->
+                <!-- 2 -->
                 <div class="grid-item">
-                    <img src="piñatas.jpg" onerror="this.src='https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=300'" alt="Piñatas">
+                    <img src="piñatas.jpg" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=300'" alt="Piñatas">
                     <div class="grid-overlay">Piñatas</div>
                 </div>
-                <!-- Foto 3 -->
+                <!-- 3 -->
                 <div class="grid-item">
-                    <img src="eventos.jpg" onerror="this.src='https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&q=80&w=300'" alt="Eventos">
+                    <img src="eventos.jpg" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&q=80&w=300'" alt="Eventos">
                     <div class="grid-overlay">Eventos</div>
                 </div>
-                <!-- Foto 4 -->
+                <!-- 4 -->
                 <div class="grid-item">
-                    <img src="detalles.jpg" onerror="this.src='https://images.unsplash.com/photo-1558636508-e0db3814bd1d?auto=format&fit=crop&q=80&w=300'" alt="Detalles">
+                    <img src="detalles.jpg" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1558636508-e0db3814bd1d?auto=format&fit=crop&q=80&w=300'" alt="Detalles">
                     <div class="grid-overlay">Detalles Únicos</div>
                 </div>
-                <!-- Foto 5 -->
+                <!-- 5 -->
                 <div class="grid-item">
-                    <img src="fotografo.jpg" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=300'" alt="Fotografía">
+                    <img src="fotografo.jpg" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=300'" alt="Fotografía">
                     <div class="grid-overlay">Fotografía</div>
                 </div>
-                <!-- Foto 6 -->
+                <!-- 6 -->
                 <div class="grid-item">
-                    <img src="globos.jpg" onerror="this.src='https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&q=80&w=300'" alt="Globos">
+                    <img src="globos.jpg" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&q=80&w=300'" alt="Globos">
                     <div class="grid-overlay">Globos</div>
                 </div>
-                <!-- Foto 7 -->
+                <!-- 7 -->
                 <div class="grid-item">
-                    <img src="img1.jpg" onerror="this.src='https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&q=80&w=300'" alt="Fiesta Personalizada">
+                    <img src="img1.jpg" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&q=80&w=300'" alt="Fiesta Personalizada">
                     <div class="grid-overlay">Fiesta Personalizada</div>
                 </div>
-                <!-- Foto 8 -->
+                <!-- 8 -->
                 <div class="grid-item">
-                    <img src="img2.jpg" onerror="this.src='https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&q=80&w=300'" alt="Fiesta Personalizada">
+                    <img src="img2.jpg" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&q=80&w=300'" alt="Fiesta Personalizada">
                     <div class="grid-overlay">Fiesta Personalizada</div>
                 </div>
-                <!-- Foto 9 -->
+                <!-- 9 -->
                 <div class="grid-item">
-                    <img src="img3.jpg" onerror="this.src='https://images.unsplash.com/photo-1533292686609-dd776510d29f?auto=format&fit=crop&q=80&w=300'" alt="Invitaciones Digital y Tradicional">
-                    <div class="grid-overlay">Invitaciones Digital y Tradicional</div>
+                    <img src="img3.jpg" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1533292686609-dd776510d29f?auto=format&fit=crop&q=80&w=300'" alt="Invitaciones Digitales">
+                    <div class="grid-overlay">Invitaciones</div>
                 </div>
-                <!-- Foto 10 -->
+                <!-- 10 -->
                 <div class="grid-item">
-                    <img src="img4.jpg" onerror="this.src='https://images.unsplash.com/photo-1514525253440-b393452e8220?auto=format&fit=crop&q=80&w=300'" alt="Stickers para cualquier necesidad">
-                    <div class="grid-overlay">Stickers para cualquier necesidad</div>
+                    <img src="img4.jpg" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1514525253440-b393452e8220?auto=format&fit=crop&q=80&w=300'" alt="Stickers">
+                    <div class="grid-overlay">Stickers</div>
                 </div>
             </div>
         </div>
+
+        <!-- CARRUSEL DE SERVICIOS -->
+        <div class="services-title-header">🚀 Servicios Profesionales</div>
+        <div class="services-carousel-container" id="servicesContainer">
+            <!-- Tarjeta 1: Imprenta -->
+            <div class="service-card card-imprenta active">
+                <i class="fas fa-print service-icon-large"></i>
+                <h3>Imprenta & Papelería</h3>
+                <p>Tarjetas de presentación, volantes, folletos, catálogos, revistas, membretes, etiquetas, folders y plastificado.</p>
+            </div>
+            
+            <!-- Tarjeta 2: Publicidad -->
+            <div class="service-card card-publicidad">
+                <i class="fas fa-bullhorn service-icon-large"></i>
+                <h3>Publicidad Exterior</h3>
+                <p>Lonas publicitarias, vinilos (corte e impresión), acrílicos, decoración de interiores, letreros LED y toldos.</p>
+            </div>
+
+            <!-- Tarjeta 3: Promocionales -->
+            <div class="service-card card-promo">
+                <i class="fas fa-tshirt service-icon-large"></i>
+                <h3>Promocionales</h3>
+                <p>Personalizamos todo: Vasos, termos, agendas, playeras (DTF), tazas, rompecabezas, mousepads y tarjetas PVC.</p>
+            </div>
+
+            <!-- Tarjeta 4: Foto y Video -->
+            <div class="service-card card-foto">
+                <i class="fas fa-camera service-icon-large"></i>
+                <h3>Foto & Video</h3>
+                <p>Cobertura de eventos sociales y empresariales, sesiones de estudio (retrato, moda, producto), fotolibros y video.</p>
+            </div>
+
+            <!-- Tarjeta 5: Diseño -->
+            <div class="service-card card-diseno">
+                <i class="fas fa-pen-nib service-icon-large"></i>
+                <h3>Diseño Creativo</h3>
+                <p>Diseño gráfico, editorial, web, identidad visual (logos) y diseño para redes sociales para seducir con la imagen.</p>
+            </div>
+        </div>
+
+        <!-- Indicadores de puntos -->
+        <div class="dots-container" id="dotsContainer">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <!-- ANIMACIÓN FINAL DE IMÁGENES (Slideshow) -->
+        <div class="bottom-slideshow-container">
+            <!-- Las imágenes se cargarán aquí automáticamente con JS -->
+            <img src="decoracion.jpg" class="slide-img visible" alt="Slide 1">
+            <img src="piñatas.jpg" class="slide-img" alt="Slide 2">
+            <img src="eventos.jpg" class="slide-img" alt="Slide 3">
+            <img src="detalles.jpg" class="slide-img" alt="Slide 4">
+            <img src="fotografo.jpg" class="slide-img" alt="Slide 5">
+            <img src="globos.jpg" class="slide-img" alt="Slide 6">
+            <div class="slide-caption">¡Momentos Mágicos! ✨</div>
+        </div>
+
+        <p class="cta-text">¡Si lo imaginas, lo creamos!</p>
 
         <footer>
             <p>© 2026 Fiestas Chiditas<br>Hecho con 💖 en Asmodeus Corp</p>
         </footer>
     </div>
 
+    <!-- JAVASCRIPT PARA LAS ANIMACIONES -->
+    <script>
+        // --- 1. Lógica del Carrusel de Servicios ---
+        const cards = document.querySelectorAll('.service-card');
+        const dots = document.querySelectorAll('.dot');
+        let currentCardIndex = 0;
+
+        function rotateServices() {
+            // Quitar clase active y prev de todos
+            cards.forEach(card => {
+                card.classList.remove('active');
+                card.classList.remove('prev');
+            });
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            // Calcular índices
+            const prevIndex = currentCardIndex;
+            currentCardIndex = (currentCardIndex + 1) % cards.length;
+
+            // Asignar clases
+            cards[prevIndex].classList.add('prev'); // La que se va
+            cards[currentCardIndex].classList.add('active'); // La que entra
+            dots[currentCardIndex].classList.add('active'); // Punto activo
+        }
+
+        // Cambiar cada 4 segundos
+        setInterval(rotateServices, 4000);
+
+
+        // --- 2. Lógica del Slideshow de Fotos Abajo ---
+        // Lista de imágenes disponibles (usamos las mismas de arriba)
+        const imagesList = [
+            'decoracion.jpg', 'piñatas.jpg', 'eventos.jpg', 'detalles.jpg', 
+            'fotografo.jpg', 'globos.jpg', 'img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg'
+        ];
+        
+        const slideContainer = document.querySelector('.bottom-slideshow-container');
+        // Limpiar contenedor (dejamos solo el caption)
+        const caption = slideContainer.querySelector('.slide-caption');
+        slideContainer.innerHTML = ''; 
+        slideContainer.appendChild(caption);
+
+        // Crear elementos de imagen dinámicamente
+        imagesList.forEach((src, index) => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.classList.add('slide-img');
+            // Si la imagen falla, usa un placeholder (seguridad)
+            img.onerror = function() { this.src = 'https://via.placeholder.com/300x300/ff0066/ffffff?text=Fiesta'; };
+            if (index === 0) img.classList.add('visible'); // La primera visible
+            slideContainer.insertBefore(img, caption);
+        });
+
+        const slides = document.querySelectorAll('.slide-img');
+        let currentSlide = 0;
+
+        function rotateSlides() {
+            slides[currentSlide].classList.remove('visible');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('visible');
+        }
+
+        // Cambiar foto cada 3 segundos
+        setInterval(rotateSlides, 3000);
+
+    </script>
 </body>
 </html>
-
-
-
