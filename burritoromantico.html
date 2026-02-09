@@ -35,11 +35,14 @@
             background: var(--parchment);
             background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
             border: 4px double var(--gold);
-            max-width: 450px;
-            width: 90%;
-            padding: 2rem;
+            max-width: 500px;
+            width: 95%;
+            padding: 1.5rem;
+            margin: 1rem;
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
             z-index: 1000;
+            max-height: 95vh;
+            overflow-y: auto;
         }
 
         .medieval-input {
@@ -49,12 +52,37 @@
             width: 100%;
             font-family: 'Cinzel', serif;
             color: var(--deep-brown);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             outline: none;
+            font-size: 0.9rem;
         }
 
         .medieval-input:focus {
             background: #fff;
+        }
+
+        /* Instrucciones Visuales */
+        .instruction-step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            text-align: left;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--deep-brown);
+        }
+        .step-num {
+            background: var(--dragon-red);
+            color: var(--gold);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.7rem;
         }
 
         /* Libro Realista */
@@ -95,14 +123,8 @@
             box-shadow: inset 0 0 50px rgba(0,0,0,0.1);
         }
 
-        .leaf-back {
-            transform: rotateY(180deg);
-            background: #e6d5b8;
-        }
-
-        .leaf.flipped {
-            transform: rotateY(-180deg);
-        }
+        .leaf-back { transform: rotateY(180deg); background: #e6d5b8; }
+        .leaf.flipped { transform: rotateY(-180deg); }
 
         .font-medieval { font-family: 'Pirata One', cursive; color: var(--dragon-red); }
         .font-body { font-family: 'Cinzel', serif; color: var(--deep-brown); font-weight: 700; line-height: 1.4; }
@@ -124,7 +146,6 @@
             50% { transform: translateY(-10px) rotate(2deg); }
         }
 
-        /* Botón Medieval */
         .btn-medieval {
             background: linear-gradient(to bottom, #8b0000, #4a0000);
             color: var(--gold);
@@ -137,16 +158,12 @@
             cursor: pointer;
             box-shadow: 0 4px 0 #2a0000, 0 8px 15px rgba(0,0,0,0.4);
             transition: all 0.2s;
-            margin-top: auto;
             text-align: center;
         }
 
-        .btn-medieval:active {
-            transform: translateY(3px);
-            box-shadow: 0 1px 0 #2a0000;
-        }
+        .btn-medieval:active { transform: translateY(3px); box-shadow: 0 1px 0 #2a0000; }
 
-        /* Botón Juguetón NO Mejorado */
+        /* Botón Juguetón NO */
         #no-btn {
             position: relative;
             z-index: 100;
@@ -162,13 +179,17 @@
             box-shadow: 0 3px 0 #222;
         }
 
-        /* Menú Festivo */
+        /* Menú Festivo CORREGIDO */
         .festive-menu {
-            background: #fdf6e3;
+            background-color: #fdf6e3;
             background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
             border: 6px double var(--festive-green);
             color: var(--festive-green);
-            box-shadow: 0 0 30px rgba(45, 90, 39, 0.2);
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            max-width: 400px;
+            width: 100%;
         }
 
         .btn-festive {
@@ -177,6 +198,12 @@
             color: var(--festive-green);
             font-weight: 800;
             transition: all 0.2s;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            font-size: 0.75rem;
         }
 
         .btn-festive:hover {
@@ -184,7 +211,6 @@
             color: white;
         }
 
-        /* Cupón Piel de Dragón */
         .coupon-dragon {
             background: var(--dragon-skin);
             background-image: radial-gradient(circle at 10px 10px, rgba(0,0,0,0.1) 2%, transparent 0);
@@ -196,22 +222,12 @@
 
         .hidden { display: none; }
 
-        .magic-particle {
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-        }
-
-        /* Animación Tintineante */
         @keyframes twinkle {
             0% { opacity: 0.5; text-shadow: 0 0 5px #fff; }
             100% { opacity: 1; text-shadow: 0 0 15px var(--gold), 0 0 25px var(--gold); }
         }
-        .twinkle-text {
-            animation: twinkle 0.8s infinite alternate;
-        }
+        .twinkle-text { animation: twinkle 0.8s infinite alternate; }
 
-        /* Efecto Polaroid */
         .polaroid-box {
             background: white;
             padding: 10px 10px 30px 10px;
@@ -222,7 +238,6 @@
             border: 1px solid #ddd;
         }
 
-        /* Botón Discreto Footer */
         .footer-link-btn {
             display: inline-block;
             margin-top: 10px;
@@ -232,241 +247,228 @@
             text-decoration: underline;
             transition: transform 0.2s;
         }
-        .footer-link-btn:hover {
-            transform: scale(1.05);
-            color: var(--dragon-red);
-        }
 
-        /* Latido de corazón */
-        .heart-beat {
-            animation: beat 0.8s infinite alternate ease-in-out;
-            display: inline-block;
-        }
-        @keyframes beat {
-            from { transform: scale(1); }
-            to { transform: scale(1.2); }
+        .heart-beat { animation: beat 0.8s infinite alternate ease-in-out; display: inline-block; }
+        @keyframes beat { from { transform: scale(1); } to { transform: scale(1.2); } }
+
+        #audio-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 2000;
+            background: var(--parchment);
+            border: 2px solid var(--gold);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
     </style>
 </head>
 <body>
 
+    <!-- ELEMENTO DE AUDIO -->
+    <audio id="bg-music" loop>
+        <source src="musicaburro.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="audio-controls" onclick="toggleMusic()" title="Encender/Apagar Música">
+        <span id="music-icon">🎵</span>
+    </div>
+
     <div id="fx-container" class="fixed inset-0 pointer-events-none"></div>
 
-    <!-- PANTALLA INICIAL: GENERADOR -->
+    <!-- PANTALLA INICIAL -->
     <div id="setup-screen" class="hidden">
-        <h1 class="font-medieval text-3xl text-center mb-4 uppercase leading-tight">Crea tu crónica de amor de Burro y Dragona</h1>
-        <div class="w-full h-1 bg-red-800 mb-6"></div>
+        <h1 class="font-medieval text-2xl text-center mb-2 uppercase leading-tight">Crea tu crónica de amor</h1>
+        <p class="text-[10px] text-center mb-4 italic text-red-900 font-bold uppercase tracking-widest">Inspirado en Burro y Dragona</p>
+        
+        <div class="bg-white/40 p-3 rounded border border-gold/30 mb-6">
+            <h3 class="text-[10px] font-black mb-3 uppercase tracking-tighter text-dragon-red border-b border-dragon-red/10 pb-1">¿Cómo funciona este hechizo?</h3>
+            <div class="instruction-step"><span class="step-num">1</span><span>Escribe los nombres y un mensaje tierno.</span></div>
+            <div class="instruction-step"><span class="step-num">2</span><span>Dale a "Generar Hechizo" y copia el enlace.</span></div>
+            <div class="instruction-step"><span class="step-num">3</span><span>Envíalo a tu pareja por WhatsApp.</span></div>
+            <div class="instruction-step"><span class="step-num">4</span><span>Ella/Él elegirá una cita y te mandará el cupón.</span></div>
+        </div>
+
         <div class="space-y-4 text-center">
             <div class="text-left">
-                <label class="font-body text-xs uppercase block mb-1">Nombre de quien envía (El Burro):</label>
+                <label class="font-body text-[10px] uppercase block mb-1">Nombre de quien envía (El Burro):</label>
                 <input type="text" id="input-f" placeholder="Tu nombre" class="medieval-input">
             </div>
             <div class="text-left">
-                <label class="font-body text-xs uppercase block mb-1">Nombre de quien recibe (La Dragona):</label>
+                <label class="font-body text-[10px] uppercase block mb-1">Nombre de quien recibe (La Dragona):</label>
                 <input type="text" id="input-t" placeholder="Su nombre" class="medieval-input">
             </div>
             <div class="text-left">
-                <label class="font-body text-xs uppercase block mb-1">Mensaje de San Valentín:</label>
-                <textarea id="input-m" placeholder="¿Quieres ser mi Valentine?" class="medieval-input h-20" maxlength="80"></textarea>
+                <label class="font-body text-[10px] uppercase block mb-1">Mensaje de San Valentín:</label>
+                <textarea id="input-m" placeholder="¿Quieres ser mi Valentine?" class="medieval-input h-16" maxlength="80"></textarea>
             </div>
             
             <div class="flex flex-col gap-3">
-                <button onclick="generateTheLink()" class="btn-medieval w-full">GENERAR HECHIZO</button>
-                <button onclick="runPreview()" class="text-xs font-bold underline opacity-70 hover:opacity-100 uppercase tracking-widest text-[#3d2b1f]">Vista previa del cuento</button>
+                <button onclick="generateTheLink()" class="btn-medieval w-full text-sm">GENERAR HECHIZO</button>
+                <button onclick="runPreview()" class="text-[10px] font-bold underline opacity-70 hover:opacity-100 uppercase tracking-widest text-[#3d2b1f]">Vista previa del cuento</button>
             </div>
             
             <div id="link-result" class="mt-4 hidden animate-pulse">
-                <p class="font-body text-[10px] text-center mb-2">¡HECHIZO LISTO! COPIA ESTE ENLACE:</p>
+                <p class="font-body text-[10px] text-center mb-2 font-black text-dragon-red uppercase">¡Hechizo listo! Copia este enlace:</p>
                 <div class="flex gap-2">
                     <input type="text" id="final-url" readonly class="medieval-input !text-[10px] mb-0 flex-1">
-                    <button onclick="copyGeneratedLink()" class="btn-medieval !p-2 !mt-0 !text-[10px]">COPIAR</button>
+                    <button onclick="copyGeneratedLink()" class="btn-medieval !px-3 !py-2 !text-[10px]">COPIAR</button>
                 </div>
             </div>
         </div>
         
-        <div class="mt-8 border-t border-dragon-red/10 pt-4 text-center">
-            <a href="https://asmodeuscorp.github.io/fiestaschiditas/" target="_blank" class="footer-link-btn">
-                FIESTAS CHIDITAS © 2026
-            </a>
+        <div class="mt-6 border-t border-dragon-red/10 pt-4 text-center">
+            <a href="https://asmodeuscorp.github.io/fiestaschiditas/" target="_blank" class="footer-link-btn text-xs uppercase">Fiestas Chiditas © 2026</a>
         </div>
     </div>
 
-    <!-- LIBRO (MODO VISTA) -->
+    <!-- VISTA DEL LIBRO -->
     <div id="book-wrap" class="book-container hidden">
-        
-        <!-- HOJA 7: LA PREGUNTA FINAL -->
+        <!-- Hoja 7: Pregunta Final -->
         <div class="leaf" id="leaf7" style="z-index: 1;">
             <div class="leaf-front" id="leaf-question-container" style="position: relative;">
                 <div class="page-border"></div>
-                <h1 class="font-medieval text-4xl text-center mb-4" id="target-display">¡OYE TÚ!</h1>
+                <h1 class="font-medieval text-4xl text-center mb-4 uppercase" id="target-display">¡Oye Tú!</h1>
                 <p class="font-body text-center mb-8 italic" id="custom-message">"Y ASÍ, DESPUÉS DE TANTO RECORRER... ¿ACEPTARÍAS SER MI VALENTINE?"</p>
                 <div class="flex flex-col gap-4 w-full px-4 items-center">
-                    <button onclick="showDates()" class="btn-medieval bg-green-700 !from-green-600 !to-green-900 scale-105 animate-bounce w-full">¡SÍ, POR MIL WAFFLES!</button>
-                    <!-- Contenedor para el botón "No" restringido -->
+                    <button onclick="showDates()" class="btn-medieval bg-green-700 !from-green-600 !to-green-900 scale-105 animate-bounce w-full uppercase">¡Sí, por mil waffles!</button>
                     <div class="w-full h-14 flex items-center justify-center relative" id="no-btn-constrain-area">
                         <button id="no-btn" onmouseover="playfulNo()" onmouseleave="resetNo()" ontouchstart="playfulNo()" ontouchend="resetNo()" onclick="playfulNo()">No... prefiero el pantano.</button>
                     </div>
                 </div>
-                
                 <div class="mt-4 text-center">
                     <p class="text-[14px] font-bold uppercase tracking-widest text-[#3d2b1f]">Enviado por:</p>
                     <p class="text-[28px] font-medieval text-[#d4af37] drop-shadow-md" id="sender-name">Tu Caballero</p>
                 </div>
-
-                <!-- Footer de Marketing Mejorado -->
                 <div class="mt-auto pb-4 text-center px-4">
                     <p class="text-[12px] leading-relaxed text-[#3d2b1f] font-bold">
                         Tarjeta creada por <a href="https://asmodeuscorp.github.io/fiestaschiditas/" target="_blank" class="underline font-black">Fiestas chiditas</a>.
-                        ¿Te gustaría una totalmente personalizada? Te la hacemos con gusto 
-                        <a href="https://wa.me/524421260133?text=Yo%20tambien%20quiero%20una%20tarjeta%20personalizada" target="_blank" class="underline text-red-800 font-black">da clic aquí</a>.
                     </p>
                 </div>
             </div>
             <div class="leaf-back"></div>
         </div>
 
-        <!-- HOJA 6: EL EQUIPO IMPRESIONANTE -->
+        <!-- Hoja 6: Equipo -->
         <div class="leaf" id="leaf6" style="z-index: 2;">
             <div class="leaf-front">
                 <div class="page-border"></div>
-                <p class="font-body text-center">¡NI SE TE OCURRA DECIR QUE NO!</p>
-                <p class="font-body text-center mt-2">PORQUE ESTE EQUIPO QUE HACEMOS ES...</p>
+                <p class="font-body text-center mt-2 uppercase">Porque este equipo que hacemos es...</p>
                 <div class="emoji-box">🛡️🐲🐴</div>
-                <h2 class="font-medieval text-4xl text-center">¡IMPRESIONANTE!</h2>
-                <p class="font-body text-center mt-2 text-sm uppercase">UNA DRAGONA Y UN BURRO ASI NO ME ABURRO</p>
-                <button onclick="triggerMagicFlip(6)" class="btn-medieval">REVELAR DESTINO</button>
+                <h2 class="font-medieval text-4xl text-center uppercase">¡Impresionante!</h2>
+                <p class="font-body text-center mt-2 text-sm uppercase">Una dragona y un burro así no me aburro</p>
+                <button onclick="triggerMagicFlip(6)" class="btn-medieval text-xs uppercase">Revelar Destino</button>
             </div>
             <div class="leaf-back"></div>
         </div>
 
-        <!-- HOJA 5: RARO PERO PERFECTO -->
+        <!-- Hoja 5: Pareja Mágica -->
         <div class="leaf" id="leaf5" style="z-index: 3;">
             <div class="leaf-front">
                 <div class="page-border"></div>
-                <p class="font-body text-center">UN BURRO Y UNA DRAGONA... ¡QUIÉN LO DIRÍA!</p>
+                <p class="font-body text-center uppercase">Un burro y una dragona... ¡quién lo diría!</p>
                 <div class="emoji-box">🧪💖🌈</div>
-                <p class="font-body text-center">ES UNA PAREJA RARA, PERO ES NUESTRA MAGÍA. Y NINGÚN HECHIZO PODRÍA ROMPERLO.</p>
-                <button onclick="flipPage(5)" class="btn-medieval">SIGUIENTE</button>
+                <p class="font-body text-center uppercase">Es una pareja rara, pero es nuestra magía. Y ningún hechizo podría romperlo.</p>
+                <button onclick="flipPage(5)" class="btn-medieval text-xs uppercase">Siguiente</button>
             </div>
             <div class="leaf-back"></div>
         </div>
 
-        <!-- HOJA 4: LOS WAFFLES -->
+        <!-- Hoja 4: Waffles -->
         <div class="leaf" id="leaf4" style="z-index: 4;">
             <div class="leaf-front">
                 <div class="page-border"></div>
-                <p class="font-body text-center">"¿SABES QUÉ SERÍA MÁS IMPRESIONANTE?" - PREGUNTÓ ÉL.</p>
                 <div class="emoji-box">🧇🔥🥛</div>
-                <p class="font-body text-center">"¡QUE HICIÉRAMOS UNOS WAFFLES JUNTOS MIENTRAS VOLAMOS POR EL REINO DE MUY MUY LEJANO!"</p>
-                <button onclick="flipPage(4)" class="btn-medieval">CONTINUAR</button>
+                <p class="font-body text-center uppercase">"¡Que hiciéramos unos waffles juntos mientras volamos por el reino de Muy Muy Lejano!"</p>
+                <button onclick="flipPage(4)" class="btn-medieval text-xs uppercase">Continuar</button>
             </div>
             <div class="leaf-back"></div>
         </div>
 
-        <!-- HOJA 3: EL PIROPO -->
+        <!-- Hoja 3: Piropo -->
         <div class="leaf" id="leaf3" style="z-index: 5;">
             <div class="leaf-front">
                 <div class="page-border"></div>
-                <p class="font-body text-center italic">"EL BURRO NO PERDIÓ TIEMPO Y LE SOLTÓ SU MEJOR LÍNEA:"</p>
+                <p class="font-body text-center italic uppercase">"El burro le soltó su mejor línea:"</p>
                 <div class="emoji-box">✨🤩✨</div>
-                <p class="font-body text-center">"¡VAYA! ¿TE HAN DICHO QUE TIENES UNA SONRISA DESLUMBRANTE <span id="story-target-1"></span>?"</p>
-                <p class="text-sm mt-4 text-[#2d1b0e] font-black border-t border-dragon-red/20 pt-2">...Y ELLA SE QUEDÓ DE A SEIS.</p>
-                <button onclick="flipPage(3)" class="btn-medieval">AVANZAR</button>
+                <p class="font-body text-center uppercase">"¡Vaya! ¿Te han dicho que tienes una sonrisa deslumbrante <span id="story-target-1"></span>?"</p>
+                <p class="text-sm mt-4 text-[#2d1b0e] font-black border-t border-dragon-red/20 pt-2 uppercase">...y ella se quedó de a seis.</p>
+                <button onclick="flipPage(3)" class="btn-medieval text-xs uppercase">Avanzar</button>
             </div>
             <div class="leaf-back"></div>
         </div>
 
-        <!-- HOJA 2: ENCUENTRO -->
+        <!-- Hoja 2: Encuentro -->
         <div class="leaf" id="leaf2" style="z-index: 6;">
             <div class="leaf-front">
-                <p class="font-body text-center">TODO EMPEZÓ CON UN NOBLE CORCEL (O SEA, YO <span id="story-sender-1"></span>) ENTRANDO A UN CASTILLO...</p>
+                <div class="page-border"></div>
+                <p class="font-body text-center uppercase">Todo empezó con un noble corcel (yo <span id="story-sender-1"></span>) entrando a un castillo...</p>
                 <div class="emoji-box">🐴🏰🔥</div>
-                <p class="font-body text-center">Y ENCONTRANDO A UNA DRAGONA QUE RESULTÓ TENER PURO CORAZÓN.</p>
-                <button onclick="flipPage(2)" class="btn-medieval">PASAR HOJA</button>
+                <p class="font-body text-center text-sm uppercase">Encontrando a una dragona que resultó tener puro corazón.</p>
+                <button onclick="flipPage(2)" class="btn-medieval text-xs uppercase">Pasar Hoja</button>
             </div>
             <div class="leaf-back"></div>
         </div>
 
-        <!-- HOJA 1: PORTADA -->
+        <!-- Hoja 1: Portada -->
         <div class="leaf" id="leaf1" style="z-index: 7;">
             <div class="leaf-front">
                 <div class="page-border"></div>
-                <h1 class="font-medieval text-5xl text-center mb-4">CRÓNICAS DE UN BURRO ENAMORADO</h1>
+                <h1 class="font-medieval text-4xl text-center mb-4 leading-tight uppercase">Crónicas de un Burro Enamorado</h1>
                 <div class="w-24 h-1 bg-red-800 mb-6"></div>
-                
-                <div class="emoji-box">
-                    <span>📖</span>
-                    <span class="heart-beat">❤️</span>
-                    <span>✨</span>
-                </div>
-
-                <button onclick="flipPage(1)" class="btn-medieval">ABRIR CUENTO</button>
-
-                <!-- Footer de Portada con Treelink -->
+                <div class="emoji-box"><span>📖</span><span class="heart-beat">❤️</span><span>✨</span></div>
+                <button onclick="startExperience()" class="btn-medieval text-sm mt-4 uppercase">Abrir Cuento</button>
                 <div class="mt-auto pb-4 text-center">
-                    <a href="https://asmodeuscorp.github.io/fiestaschiditas/" target="_blank" class="text-[12px] leading-relaxed text-[#3d2b1f] font-bold underline decoration-red-800">
-                        UNA HISTORIA DE FIESTAS CHIDITAS
-                    </a>
+                    <a href="https://asmodeuscorp.github.io/fiestaschiditas/" target="_blank" class="text-[12px] leading-relaxed text-[#3d2b1f] font-bold underline decoration-red-800 uppercase">Una historia de Fiestas Chiditas</a>
                 </div>
             </div>
             <div class="leaf-back"></div>
         </div>
-
     </div>
 
-    <!-- MENÚ DE CITAS -->
+    <!-- MENÚ DE SELECCIÓN DE CITA (RESTAURADO) -->
     <div id="date-menu" class="hidden fixed inset-0 z-[100] bg-black/80 flex items-center justify-center p-4">
-        <div class="festive-menu max-w-md w-full p-8 text-center rounded-2xl relative overflow-hidden">
+        <div class="festive-menu text-center relative overflow-hidden">
             <div class="text-4xl mb-4">🎈</div>
-            <h2 class="font-medieval text-4xl mb-6">¡VAMOS A FESTEJAR!</h2>
-            <p class="font-body text-sm mb-6 text-gray-700 font-bold italic uppercase">ESCOGE TU AVENTURA REAL:</p>
-            <div class="grid gap-3">
-                <button onclick="createCoupon('BANQUETE EN EL PANTANO', '🍖')" class="w-full py-3 btn-festive uppercase text-xs p-2">🍖 Banquete en el Pantano</button>
-                <button onclick="createCoupon('POCIONES CHIDITAS', '🍸')" class="w-full py-3 btn-festive uppercase text-xs p-2">🍸 Noche de Pociones Mágicas</button>
-                <button onclick="createCoupon('CINE EN EL CASTILLO', '🏰')" class="w-full py-3 btn-festive uppercase text-xs p-2">🏰 Cine en el Castillo</button>
-                <button onclick="createCoupon('AVENTURA EN EL BOSQUE', '🌲')" class="w-full py-3 btn-festive uppercase text-xs p-2">🌲 Aventura en el Bosque</button>
-                <button onclick="createCoupon('PICNIC DE LEYENDA', '🧺')" class="w-full py-3 btn-festive uppercase text-xs p-2">🧺 Picnic de Muy Muy Lejano</button>
+            <h2 class="font-medieval text-3xl mb-2 uppercase">¡Vamos a Festejar!</h2>
+            <p class="font-body text-[10px] mb-6 text-gray-600 uppercase tracking-widest">Escoge tu aventura real:</p>
+            
+            <div class="grid gap-2">
+                <button onclick="createCoupon('Banquete en el Pantano', '🍖')" class="btn-festive">🍖 Banquete en el Pantano</button>
+                <button onclick="createCoupon('Noche de Pociones', '🍸')" class="btn-festive">🍸 Noche de Pociones Mágicas</button>
+                <button onclick="createCoupon('Cine en el Castillo', '🏰')" class="btn-festive">🏰 Cine en el Castillo</button>
+                <button onclick="createCoupon('Aventura en el Bosque', '🌲')" class="btn-festive">🌲 Aventura en el Bosque</button>
+                <button onclick="createCoupon('Picnic de Leyenda', '🧺')" class="btn-festive">🧺 Picnic de Muy Muy Lejano</button>
             </div>
-
-            <!-- Footer de la Pantalla de Selección -->
+            
             <div class="mt-8 pt-4 border-t border-festive-green/20">
-                <a href="https://asmodeuscorp.github.io/fiestaschiditas/" target="_blank" class="font-body text-[13px] text-festive-green font-black underline">
+                <a href="https://asmodeuscorp.github.io/fiestaschiditas/" target="_blank" class="font-body text-[11px] text-festive-green font-black underline uppercase">
                     ¿Quieres un festejo en grande? <br> ¡En Fiestas Chiditas te ayudamos!
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- INVITACIÓN FINAL (PIEL DE DRAGÓN) -->
+    <!-- VALE REAL FINAL -->
     <div id="coupon-overlay" class="hidden fixed inset-0 z-[110] bg-black/90 flex items-center justify-center p-4">
         <div class="coupon-dragon p-8 max-w-sm w-full text-center relative rounded-xl border-4">
-            <h2 class="font-medieval text-3xl mb-4 text-white drop-shadow-md">VALE REAL</h2>
+            <h2 class="font-medieval text-3xl mb-4 text-white drop-shadow-md uppercase">Vale Real</h2>
             <div class="w-full h-px bg-white/30 mb-4"></div>
-            <div class="emoji-box text-7xl my-6 drop-shadow-lg" id="final-emoji"></div>
-            <h3 class="font-medieval text-3xl mb-4 text-yellow-300 drop-shadow-sm" id="final-title"></h3>
-            
-            <!-- Nombres centrados y más grandes -->
+            <div class="emoji-box text-6xl my-6 drop-shadow-lg" id="final-emoji"></div>
+            <h3 class="font-medieval text-2xl mb-4 text-yellow-300 drop-shadow-sm uppercase" id="final-title"></h3>
             <div class="text-center space-y-3 mb-8 text-white">
-                <div class="space-y-1">
-                    <p class="font-body text-[14px] uppercase tracking-widest opacity-90">Otorgado por:</p>
-                    <p id="coupon-from-val" class="font-medieval text-4xl text-yellow-300 drop-shadow-md"></p>
-                </div>
-                <div class="space-y-1 pt-2">
-                    <p class="font-body text-[14px] uppercase tracking-widest opacity-90">Para:</p>
-                    <p id="coupon-to-val" class="font-medieval text-4xl text-yellow-300 drop-shadow-md"></p>
-                </div>
+                <div class="space-y-1"><p class="font-body text-[10px] uppercase tracking-widest opacity-80">Otorgado por:</p><p id="coupon-from-val" class="font-medieval text-3xl text-yellow-300 drop-shadow-md uppercase"></p></div>
+                <div class="space-y-1 pt-2"><p class="font-body text-[10px] uppercase tracking-widest opacity-80">Para:</p><p id="coupon-to-val" class="font-medieval text-3xl text-yellow-300 drop-shadow-md uppercase"></p></div>
             </div>
-
-            <!-- Texto tintineante -->
-            <p class="text-[13px] tracking-widest mb-10 uppercase font-black text-white twinkle-text">VÁLIDO POR UNA EXPERIENCIA IMPRESIONANTE</p>
-            
-            <!-- Polaroid -->
-            <div class="polaroid-box">
-                <p class="text-red-900 font-black text-sm uppercase mb-1">📸 ¡TOMA SCREENSHOT</p>
-                <p class="text-red-800 font-bold text-xs">Y MÁNDALO YA!</p>
-            </div>
-            
-            <a href="https://asmodeuscorp.github.io/fiestaschiditas/" target="_blank" class="text-[10px] text-yellow-200 underline tracking-widest opacity-90 hover:opacity-100">MÁS MAGIA EN FIESTAS CHIDITAS 🚀</a>
+            <p class="text-[11px] tracking-widest mb-10 uppercase font-black text-white twinkle-text">Válido por una experiencia impresionante</p>
+            <div class="polaroid-box"><p class="text-red-900 font-black text-xs uppercase mb-1">📸 ¡Toma screenshot</p><p class="text-red-800 font-bold text-[10px] uppercase">y mándalo ya!</p></div>
+            <a href="https://asmodeuscorp.github.io/fiestaschiditas/" target="_blank" class="text-[9px] text-yellow-200 underline tracking-widest opacity-90 hover:opacity-100 uppercase">Más magia en Fiestas Chiditas 🚀</a>
         </div>
     </div>
 
@@ -475,30 +477,40 @@
         const nameT = urlParams.get('t');
         const nameF = urlParams.get('f');
         const msgVal = urlParams.get('m');
+        const audio = document.getElementById('bg-music');
+        let musicPlaying = false;
+        let noTries = 0;
 
-        // Detectar si mostrar Generador o Libro
         if (nameT && nameF) {
             setupBookView(nameT, nameF, msgVal);
         } else {
             document.getElementById('setup-screen').classList.remove('hidden');
         }
 
-        function setupBookView(t, f, m) {
-            const decT = decodeURIComponent(t);
-            const decF = decodeURIComponent(f);
+        function toggleMusic() {
+            if (musicPlaying) { audio.pause(); document.getElementById('music-icon').innerText = '🔇'; }
+            else { audio.play().catch(() => {}); document.getElementById('music-icon').innerText = '🎵'; }
+            musicPlaying = !musicPlaying;
+        }
 
+        function startExperience() {
+            if (!musicPlaying) { audio.play().catch(e => console.log("Audio block:", e)); musicPlaying = true; }
+            flipPage(1);
+        }
+
+        function setupBookView(t, f, m) {
+            const decT = decodeURIComponent(t); const decF = decodeURIComponent(f);
             document.getElementById('setup-screen').classList.add('hidden');
             document.getElementById('book-wrap').classList.remove('hidden');
-            document.getElementById('target-display').innerText = `¡OYE, NOBLE ${decT.toUpperCase()}!`;
+            document.getElementById('target-display').innerText = `¡Oye, Noble ${decT.toUpperCase()}!`;
             document.getElementById('sender-name').innerText = decF;
             if(m) document.getElementById('custom-message').innerText = decodeURIComponent(m);
-            
-            // Inyectar nombres en la historia
             if(document.getElementById('story-sender-1')) document.getElementById('story-sender-1').innerText = decF;
             if(document.getElementById('story-target-1')) document.getElementById('story-target-1').innerText = decT;
         }
 
         function runPreview() {
+            if (!musicPlaying) { audio.play().catch(() => {}); musicPlaying = true; }
             setupBookView('Princesa', 'Caballero', '¿Quieres ser mi Valentine?');
         }
 
@@ -506,28 +518,15 @@
             const fVal = document.getElementById('input-f').value;
             const tVal = document.getElementById('input-t').value;
             const mVal = document.getElementById('input-m').value;
-            
-            if(!fVal || !tVal) {
-                alert("¡Noble corcel, escribe los nombres!");
-                return;
-            }
-
-            const f = encodeURIComponent(fVal);
-            const t = encodeURIComponent(tVal);
-            const m = encodeURIComponent(mVal);
-
+            if(!fVal || !tVal) { alert("¡Noble corcel, escribe los nombres!"); return; }
             const baseUrl = window.location.origin + window.location.pathname;
-            const finalUrl = `${baseUrl}?f=${f}&t=${t}&m=${m}`;
-            
-            document.getElementById('final-url').value = finalUrl;
+            document.getElementById('final-url').value = `${baseUrl}?f=${encodeURIComponent(fVal)}&t=${encodeURIComponent(tVal)}&m=${encodeURIComponent(mVal)}`;
             document.getElementById('link-result').classList.remove('hidden');
         }
 
         function copyGeneratedLink() {
             const copyText = document.getElementById("final-url");
-            copyText.select();
-            copyText.setSelectionRange(0, 99999);
-            document.execCommand('copy');
+            copyText.select(); document.execCommand('copy');
             alert("¡Hechizo copiado! Envíalo a tu Dragona/Burro especial.");
         }
 
@@ -542,78 +541,53 @@
             const centerX = window.innerWidth / 2;
             const centerY = window.innerHeight / 2;
             const icons = ['❤️', '🔥', '💘', '🏹', '✨', '🐲', '🐴', '🌹'];
-            
             for(let i=0; i<70; i++) {
                 setTimeout(() => {
                     const p = document.createElement('div');
                     p.className = 'magic-particle';
                     p.innerText = icons[Math.floor(Math.random()*icons.length)];
-                    p.style.left = centerX + 'px';
-                    p.style.top = centerY + 'px';
+                    p.style.position = 'fixed';
+                    p.style.left = centerX + 'px'; p.style.top = centerY + 'px';
                     p.style.fontSize = (Math.random() * 2 + 1) + 'rem';
+                    p.style.zIndex = '9999';
                     document.body.appendChild(p);
-
                     const angle = Math.random() * Math.PI * 2;
                     const vel = Math.random() * 500 + 200;
-                    const tx = Math.cos(angle) * vel;
-                    const ty = Math.sin(angle) * vel;
-
-                    p.animate([
-                        { transform: 'translate(-50%, -50%) scale(0)', opacity: 1 },
-                        { transform: `translate(${tx}px, ${ty}px) scale(2) rotate(${Math.random()*720}deg)`, opacity: 0 }
-                    ], { duration: 2500, easing: 'ease-out' }).onfinish = () => p.remove();
+                    const tx = Math.cos(angle) * vel; const ty = Math.sin(angle) * vel;
+                    p.animate([{ transform: 'translate(-50%, -50%) scale(0)', opacity: 1 }, { transform: `translate(${tx}px, ${ty}px) scale(2) rotate(${Math.random()*720}deg)`, opacity: 0 }], { duration: 2500, easing: 'ease-out' }).onfinish = () => p.remove();
                 }, i * 20);
             }
         }
 
-        let noTries = 0;
         function playfulNo() {
             const btn = document.getElementById('no-btn');
             noTries++;
-
             if(noTries > 4) {
                 btn.innerText = "¡VALE, VALE, TÚ GANAS!";
-                btn.style.color = "#d4af37";
-                btn.style.fontSize = "1.3rem";
-                btn.style.fontWeight = "900";
-                btn.onclick = showDates;
-                btn.style.transform = 'translate(0, 0)'; // Regresa al centro
+                btn.style.color = "#d4af37"; btn.style.fontSize = "1.3rem"; btn.style.fontWeight = "900";
+                btn.onclick = showDates; btn.style.transform = 'translate(0, 0)';
                 return;
             }
-
             // Direcciones restringidas: Izquierda, Derecha o Abajo
-            const directions = [
-                { x: -90, y: 0 },  // Izquierda
-                { x: 90, y: 0 },   // Derecha
-                { x: 0, y: 40 },   // Abajo
-                { x: -70, y: 30 }, // Diagonal abajo-izq
-                { x: 70, y: 30 }   // Diagonal abajo-der
-            ];
-
+            const directions = [{ x: -90, y: 0 }, { x: 90, y: 0 }, { x: 0, y: 40 }];
             const move = directions[Math.floor(Math.random() * directions.length)];
             btn.style.transform = `translate(${move.x}px, ${move.y}px)`;
         }
 
         function resetNo() {
             const btn = document.getElementById('no-btn');
-            if(noTries <= 4) {
-                btn.style.transform = 'translate(0, 0)';
-            }
+            if(noTries <= 4) btn.style.transform = 'translate(0, 0)';
         }
 
-        function showDates() {
-            document.getElementById('date-menu').classList.remove('hidden');
-        }
+        function showDates() { document.getElementById('date-menu').classList.remove('hidden'); }
 
         function createCoupon(title, emoji) {
             const currentT = urlParams.get('t') ? decodeURIComponent(urlParams.get('t')) : 'Princesa';
             const currentF = urlParams.get('f') ? decodeURIComponent(urlParams.get('f')) : 'Caballero';
-
             document.getElementById('final-title').innerText = title;
             document.getElementById('final-emoji').innerText = emoji;
             document.getElementById('coupon-from-val').innerText = currentF;
             document.getElementById('coupon-to-val').innerText = currentT;
-
             document.getElementById('date-menu').classList.add('hidden');
             document.getElementById('coupon-overlay').classList.remove('hidden');
         }
